@@ -1,0 +1,22 @@
+{
+  "name": "clase12y13",
+  "version": "1.0.0",
+  "description": "jQuery, promesas, APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustingalaxie/js-intermedio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agustingalaxie/js-intermedio/issues"
+  },
+  "homepage": "https://github.com/agustingalaxie/js-intermedio#readme",
+  "dependencies": {
+    "jquery": "^3.6.0"
+  }
+}
