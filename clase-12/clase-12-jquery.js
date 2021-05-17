@@ -6,7 +6,7 @@
 // var $header = document.getElementsByTagName('h1')[0];
 const $header = $("h1");
 
-$header.text("Clase 12!");
+$header.text("Esto cambia el titulo");
 
 // const $elementos = document.querySelectorAll('#lista li');
 const $elementos = $("#lista li");
@@ -63,10 +63,10 @@ $.ajax({
   method: "GET",
   url: "https://api.exchangeratesapi.io/latest",
   success: respuesta => {
-    // console.log("respuesta de exchangeratesapi.io", respuesta);
-    // $("#resultado").text(JSON.stringify(respuesta));
-  }
-  //async: false //al descomentar esta línea, nada se ejecuta hasta que esta llamada termine.
+console.log("respuesta de exchangeratesapi.io", respuesta);
+$("#resultado").text(JSON.stringify(respuesta));
+  },
+  async: false //al descomentar esta línea, nada se ejecuta hasta que esta llamada termine.
 });
 
 console.log("Esto pasa antes que la respuesta de $.ajax!");

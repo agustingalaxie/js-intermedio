@@ -4,7 +4,8 @@
   "description": "jQuery, promesas, APIs.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -c-1 -p 8081"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/agustingalaxie/js-intermedio#readme",
   "dependencies": {
+    "http-server": "^0.12.3",
     "jquery": "^3.6.0"
   }
 }
