@@ -27,7 +27,7 @@ $elementos.forEach(($elemento) => {
 
 //algo para considerar con las arrow functions (no tienen this propio!)
 
-$elementos.click(()=>{
+$elementos.click(() => {
     console.log(this);
     console.log($(this).text());
 })
@@ -42,6 +42,31 @@ $elementos.click(()=>{
 
 //Web APIs
 //fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+/*$.ajax({
+    method: "GET",
+    url: 'https://api.ratesapi.io/api/latest',
+    success: respuesta => {
+        console.log("respuesta de la api", respuesta);
+        $("#resultado").text(JSON.stringify(respuesta.date))
+    }
+    async: true;
+})*/
+/*
+ac tualmente se usa mas fetch que ajax
+
+*/
+fetch('https://api.ratesapi.io/api/latest')
+    .then(respuesta => respuesta.json())
+    .then(respuestaJSON => {
+        $("h1").text(`Los cambios del día ${respuestaJSON.date} en base a la moneda ${respuestaJSON.base}`)
+        $("ul").html("")
+        Object.keys(respuestaJSON.rates).forEach(moneda =>
+            $('ul').append($(`<li>${moneda}: ${respuestaJSON.rates[moneda]}</li>`))
+            );
+    })
+    .catch(error => console.error("falló", error))
+
+console.log("esto pasa antes")
 //usa promesas
 
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Usar_promesas
